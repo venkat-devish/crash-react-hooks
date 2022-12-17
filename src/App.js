@@ -1,11 +1,11 @@
 import "./App.css";
-import UseState_C from "./components/useStateHook/UseState_C";
+import UseState_D from "./components/useStateHook/UseState_D";
 
 function App() {
   return (
     <div className="App">
       <h1>CRASH USESTATE</h1>
-      <UseState_C />
+      <UseState_D />
     </div>
   );
 }
