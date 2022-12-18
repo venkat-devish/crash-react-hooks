@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const UseEffect_A = () => {
   const [count, setCount] = useState(0);
   const [title, setTitle] = useState("");
-  console.log("rendered");
+  console.log("rendered effect");
   useEffect(() => {
     console.log("Effect ran");
     document.title = `Clicked ${count} times`;
