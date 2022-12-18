@@ -1,21 +1,26 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const UseEffect_D = () => {
   const [post, setPost] = useState({});
-  const [id, setId] = useState("1");
+  const [id, setId] = useState(1);
+  const [idRef, setIdRef] = useState(1);
 
   const data = async () => {
     const res = await axios.get(
       `https://jsonplaceholder.typicode.com/posts/${id}`
     );
-    const post = await res.data;
-    setPost(post);
+    const postData = await res.data;
+    setPost(postData);
   };
 
   useEffect(() => {
     data();
-  }, [id]);
+  }, [idRef]);
+
+  const handleFetch = () => {
+    setIdRef(id);
+  };
 
   return (
     <div>
@@ -26,12 +31,8 @@ const UseEffect_D = () => {
           setId(e.target.value);
         }}
       />
-      <h4>{post.title}</h4>
-      {/* <ul>
-        {posts.map((post) => (
-          <li key={post.userId}>{post.title}</li>
-        ))}
-      </ul> */}
+      <button onClick={handleFetch}>Fetch Posts</button>
+      <div>{post.title}</div>
     </div>
   );
 };
