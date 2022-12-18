@@ -1,11 +1,11 @@
 import "./App.css";
-import UseEffect_C from "./components/useEffectHook/UseEffect_C";
+import UseEffect_D from "./components/useEffectHook/UseEffect_D";
 
 function App() {
   return (
     <div className="App">
       <h1>CRASH USE EFFECT HOOK</h1>
-      <UseEffect_C />
+      <UseEffect_D />
     </div>
   );
 }
