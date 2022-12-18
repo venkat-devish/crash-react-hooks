@@ -1,11 +1,11 @@
 import "./App.css";
-import UseState_D from "./components/useStateHook/UseState_D";
+import UseEffect_A from "./components/useEffectHook/UseEffect_A";
 
 function App() {
   return (
     <div className="App">
-      <h1>CRASH USESTATE</h1>
-      <UseState_D />
+      <h1>CRASH USE EFFECT</h1>
+      <UseEffect_A />
     </div>
   );
 }
