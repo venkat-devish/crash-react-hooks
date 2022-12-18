@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import "./App.css";
-import Component_C from "./components/useContextHook/Component_C";
+import Component_C from "./Hooks/useContextHook/Component_C";
 
 export const UserContext = createContext();
 export const ChannelContext = createContext();
