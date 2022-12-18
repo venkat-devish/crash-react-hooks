@@ -1,11 +1,11 @@
 import "./App.css";
-import Counter_B from "./Hooks/useReducerHook/Counter_B";
+import Counter_C from "./Hooks/useReducerHook/Counter_C";
 
 function App() {
   return (
     <div className="App">
       <h1>CRASH USE CONTEXT HOOK</h1>
-      <Counter_B />
+      <Counter_C />
     </div>
   );
 }
