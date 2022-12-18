@@ -1,12 +1,11 @@
-import { createContext } from "react";
 import "./App.css";
-import Counter_A from "./Hooks/useReducerHook/Counter_A";
+import Counter_B from "./Hooks/useReducerHook/Counter_B";
 
 function App() {
   return (
     <div className="App">
       <h1>CRASH USE CONTEXT HOOK</h1>
-      <Counter_A />
+      <Counter_B />
     </div>
   );
 }
