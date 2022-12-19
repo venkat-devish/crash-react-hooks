@@ -4,7 +4,7 @@ import ParentComponent from "./Hooks/useCallbackHook/ParentComponent";
 function App() {
   return (
     <div className="App">
-      <h1>CRASHING REACT HOOKS </h1>
+      <h1>CRASH REACT HOOKS</h1>
       <ParentComponent />
     </div>
   );
