@@ -3,11 +3,32 @@ import { CountContext } from "../../App";
 
 const ComponentA = () => {
   const countCtx = useContext(CountContext);
-  console.log(countCtx);
   return (
     <div>
       ComponentA
-      <button onClick={countCtx.dispatchRef("INCREMENT")}>Increment</button>
+      <div>
+        <button
+          onClick={() => {
+            countCtx.dispatchCount("INCREMENT");
+          }}
+        >
+          Increment
+        </button>
+        <button
+          onClick={() => {
+            countCtx.dispatchCount("DECREMENT");
+          }}
+        >
+          Decrement
+        </button>
+        <button
+          onClick={() => {
+            countCtx.dispatchCount("RESET");
+          }}
+        >
+          Reset
+        </button>
+      </div>
     </div>
   );
 };

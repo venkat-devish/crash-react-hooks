@@ -1,45 +1,90 @@
 import React, { useReducer } from "react";
 
-const initialState = 0;
-const reducer = (state, action) => {
-  switch (action) {
+const initialState = {
+  count: 0,
+  reading: 10,
+};
+const reducerFn = (state, action) => {
+  switch (action.type) {
     case "INCREMENT":
-      return state + 1;
+      return { ...state, count: state.count + action.value };
     case "DECREMENT":
-      return state - 1;
+      return { ...state, count: state.count - action.value };
+    case "INCREMENT5":
+      return { ...state, count: state.count + action.value };
+    case "DECREMENT5":
+      return { ...state, count: state.count - action.value };
+    case "INCREMENT_READING":
+      return { ...state, reading: state.reading + action.value };
+    case "DECREMENT_READING":
+      return { ...state, reading: state.reading - action.value };
     case "RESET":
       return initialState;
     default:
       return state;
   }
 };
-
 const Counter_A = () => {
-  const [count, dispatch] = useReducer(reducer, initialState);
+  const [countState, dispatchFn] = useReducer(reducerFn, initialState);
   return (
     <div>
-      <h4>Count : {count}</h4>
+      <h1>Count: {countState.count}</h1>
+      <h2>Reading: {countState.reading}</h2>
+      <div>
+        <button
+          onClick={() => {
+            dispatchFn({ type: "INCREMENT", value: 1 });
+          }}
+        >
+          Increment
+        </button>
+        <button
+          onClick={() => {
+            dispatchFn({ type: "DECREMENT", value: 1 });
+          }}
+        >
+          Decrement
+        </button>
+      </div>
       <button
         onClick={() => {
-          dispatch("INCREMENT");
-        }}
-      >
-        Increment
-      </button>
-      <button
-        onClick={() => {
-          dispatch("DECREMENT");
-        }}
-      >
-        Decrement
-      </button>
-      <button
-        onClick={() => {
-          dispatch("RESET");
+          dispatchFn({ type: "RESET" });
         }}
       >
         Reset
       </button>
+      <div>
+        <button
+          onClick={() => {
+            dispatchFn({ type: "INCREMENT", value: 5 });
+          }}
+        >
+          Increment5
+        </button>
+        <button
+          onClick={() => {
+            dispatchFn({ type: "DECREMENT", value: 5 });
+          }}
+        >
+          Decrement5
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            dispatchFn({ type: "INCREMENT_READING", value: 15 });
+          }}
+        >
+          Increment Reading
+        </button>
+        <button
+          onClick={() => {
+            dispatchFn({ type: "DECREMENT_READING", value: 15 });
+          }}
+        >
+          Decrement Reading
+        </button>
+      </div>
     </div>
   );
 };
