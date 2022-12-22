@@ -1,11 +1,11 @@
 import "./App.css";
-import ThemeToggler from "./Hooks/useMemoHook/ThemeToggler";
+import TimerHook from "./Hooks/useRef/TimerHook";
 
 function App() {
   return (
     <div className="App">
       <h1>CRASH REACT HOOKS</h1>
-      <ThemeToggler />
+      <TimerHook />
     </div>
   );
 }
