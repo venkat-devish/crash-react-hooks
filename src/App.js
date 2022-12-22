@@ -1,11 +1,11 @@
 import "./App.css";
-import DataFetchingReprise from "./Hooks/useReducerHook/DataFetchingReprise";
+import ThemeToggler from "./Hooks/useMemoHook/ThemeToggler";
 
 function App() {
   return (
     <div className="App">
       <h1>CRASH REACT HOOKS</h1>
-      <DataFetchingReprise />
+      <ThemeToggler />
     </div>
   );
 }
